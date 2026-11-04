@@ -1,7 +1,7 @@
 {
 	"comment": "Contains the steps required to deploy the Shipment Management scenario",
-	"fileVersion": "1.0.2",
-	"fileLocation": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/deployment/Enterprise/DeployShipmentManagementScenario.json",
+	"fileVersion": "1.0.3",
+	"fileLocation": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/deployment/Enterprise/DeployShipmentManagementScenario.json",
 	"requiredToolVersion": ">=1.1.136 <1.2.0",
 	"requiredCP4BAVersion": ">=26.0.0 <26.1.0",
 	"requiredCP4BAPattern": "Enterprise",
@@ -48,11 +48,11 @@
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for ADS",
 										"name": "Download ADS file",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/Decision/Approval%20Plan.zip"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Decision/Approval%20Plan.zip"
+												
 											}
 										]
 									}
@@ -203,15 +203,14 @@
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for ADS",
 										"name": "Download ADS file",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/Decision/Carrier%20Delivery%20Risk%20Decision.zip"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Decision/Carrier%20Delivery%20Risk%20Decision.zip"
 											},
 											{
 												"name": "carrier_delivery_failure_scorecard.pmml",
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/Documents",
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents",
 												"retrievalMode": "latest",
 												"matchStr": "carrier_delivery_failure_scorecard.*\\.pmml"
 											}
@@ -387,12 +386,11 @@
 									"DOWNLOADRESOURCES": {
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for WF",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
 												"name": "Shipment_Management_System.twx",
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAW",
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAW",
 												"retrievalMode": "latest",
 												"matchStr": "Shipment_Management_System.*\\.twx"
 											}
@@ -553,20 +551,19 @@
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for FNCM",
 										"name": "Download FNCM files",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/templates/PO_Receipt.pdf"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/PO_Receipt.pdf"
 											},
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/templates/Shipping_Label.pdf"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/Shipping_Label.pdf"
 											},
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/templates/proof_of_delivery.pdf"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/proof_of_delivery.pdf"
 											},
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/Documents/default.jpeg"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents/default.jpeg"
 											}
 										]
 									}
@@ -674,24 +671,23 @@
 									"DOWNLOADRESOURCES": {
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for the Apps lab",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
 												"name": "Carrier_Application.twx",
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAA",
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Carrier_Application.*\\.twx"
 											},
 											{
 												"name": "Shipment_Application.twx",
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAA",
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Shipment_Application.*\\.twx"
 											},
 											{
 												"name": "Warehouse_Application.twx",
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAA",
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Warehouse_Application.*\\.twx"
 											}
@@ -793,17 +789,16 @@
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for Navigator",
 										"name": "Download ICN files",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAA/CarrierApplication.zip"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/CarrierApplication.zip"
 											},
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAA/ShipmentApplication.zip"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/ShipmentApplication.zip"
 											},
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAA/WarehouseApplication.zip"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/WarehouseApplication.zip"
 											}
 										]
 									}
@@ -973,11 +968,10 @@
 										"enabled": "$$(enableArtifactDownloadFromGit)$$",
 										"description": "Download resources required for BAI",
 										"name": "Download BAI files",
-										"token": "$(gitHubSolutionDownloadToken)$",
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/$(cp4baVersionShort)$/BAI/Shipment%20Management.json"
+												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAI/Shipment%20Management.json"
 											}
 										]
 									}

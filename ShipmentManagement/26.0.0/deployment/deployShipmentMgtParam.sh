@@ -88,7 +88,7 @@ additionalOptions=
 # Section handling values specified on the command line, requires GNU’s getopt command
 # ----------------------------------------------------------------------------------------------------------
 
-VALID_ARGS=$(getopt -o h --long dd,dv,dc,do,ocls:,oclt:,ns:,dm:,gght:,srght:,wxourl:,wxok:,wxoenv:,pscenario:,phost:,pport:,puser:,ppwd:,cl:,cu:,uims:,gmaila:,gmailk:,sc:,du:,dt:,jvm:,ds:,bd:,op:,pdmtoc:,ptmtoc:,dgithub:,addopt: -- "$@")
+VALID_ARGS=$(getopt -o h --long dd,dv,dc,do,ocls:,oclt:,ns:,dm:,wxourl:,wxok:,wxoenv:,pscenario:,phost:,pport:,puser:,ppwd:,cl:,cu:,uims:,gmaila:,gmailk:,sc:,du:,dt:,jvm:,ds:,bd:,op:,pdmtoc:,ptmtoc:,dgithub:,addopt: -- "$@")
 if [[ $? -ne 0 ]]; then
   exit 1;
 fi
@@ -103,8 +103,6 @@ while [ : ]; do
         echo "--oclt = ocpLoginToken"
         echo "--ns = cp4baNamespace"
         echo "--dm = deploymentMode (packaged/launcher)"
-        echo "--gght = globalGitHubToken"
-        echo "--srght = solutionResourceGitHubToken"
         echo "--wxourl = wxoUrl"
         echo "--wxok = wxoApiKey"
         echo "--wxoenv = wxoAgentEnvironment"
@@ -160,14 +158,6 @@ while [ : ]; do
         ;;
     --dm)
         deploymentMode=$2
-        shift 2
-        ;;
-    --gght)
-        globalGitHubToken=$2
-        shift 2
-        ;;
-    --srght)
-        solutionResourceGitHubToken=$2
         shift 2
         ;;
     --wxourl)
@@ -274,8 +264,6 @@ then
   echo "  ocLoginServer '${ocLoginServer}'"
   echo "  ocLoginToken '${ocLoginToken}'"
   echo "  cp4baNamespace '${cp4baNamespace}'"
-  echo "  deploymentMode '${deploymentMode}'"
-  echo "  globalGitHubToken '${globalGitHubToken}'"
   echo "  solutionResourceGitHubToken '${solutionResourceGitHubToken}'"
   echo "  wxoInstanceURL '${wxoInstanceURL}'"
   echo "  wxoAPIKey '${wxoAPIKey}'"
@@ -335,11 +323,11 @@ TOOLSOURCE="https://api.github.com/repos/IBM/cp4ba-client-onboarding-scenario/co
 # CP4BA version
 CP4BAVERSION="26.0.0"
 # CP4BA version
-CP4BAVERSIONSHORT="2600"
+#CP4BAVERSIONSHORT="26.0.0"
 # Deployment pattern of the CP4BA instance
 DEPLOYMENTPATTERN="Enterprise"
 # Source URL to bootstrap configuration for the deployment tool
-BOOTSTRAPURL="-bootstrapURL=https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/${CP4BAVERSIONSHORT}/deployment/${DEPLOYMENTPATTERN}"
+BOOTSTRAPURL="-bootstrapURL=https://api.github.com/repos/ibm-cloud-architecture/irt-scenarios/contents/ShipmentManagement/${CP4BAVERSION}/deployment/${DEPLOYMENTPATTERN}"
 # Name of the configuration file to use when running the deployment automation tool
 CONFIGNAME="config-deploy-gitea"
 # Automation script to use when running the deployment automation tool
@@ -350,11 +338,11 @@ SCRIPTNAME=deployShipmentMgtParam.sh
 # Name of the actual sh file passed to execution environment
 FILENAME=$0
 # Version of this script file passed to execution environment
-SCRIPTVERSION=1.0.0
+SCRIPTVERSION=1.0.1
 # Download URL for this script
-SCRIPTDOWNLOADPATH=https://github.ibm.com/api/v3/repos/dba/IRT-Solution-Scenarios/contents/ShipmentManagement/${CP4BAVERSIONSHORT}/deployment/${SCRIPTNAME%}
+SCRIPTDOWNLOADPATH=https://api.github.com/repos/ibm-cloud-architecture/irt-scenarios/contents/ShipmentManagement/${CP4BAVERSION}/deployment/${SCRIPTNAME%}
 # Variable values to be copied to newer version in case found
-COPYVARVALUES=ocLoginServer,ocLoginToken,cp4baNamespace,createUsers,useInternalMailServer,ocpStorageClassForInternalMailServer,gmailAddress,gmailAppKey,dockerUserName,dockerToken,jvmSettings,disableAccessToGitHub,proxyScenario,proxyHost,proxyPort,proxyUser,proxyPwd,proxyPwd,bootstrapDebugString,outputPath,printDetailedMessageToConsole,printTraceMessageToConsole,globalGitHubToken,solutionResourceGitHubToken,wxoUrl
+COPYVARVALUES=ocLoginServer,ocLoginToken,cp4baNamespace,createUsers,useInternalMailServer,ocpStorageClassForInternalMailServer,gmailAddress,gmailAppKey,dockerUserName,dockerToken,jvmSettings,disableAccessToGitHub,proxyScenario,proxyHost,proxyPort,proxyUser,proxyPwd,proxyPwd,bootstrapDebugString,outputPath,printDetailedMessageToConsole,printTraceMessageToConsole,wxoUrl
 
 # ----------------------------------------------------------------------------------------------------------
 # Retrieve the deployment automation jar file from GitHub if not already available or use local one when 
@@ -697,37 +685,6 @@ then
   echo "  Variable 'wxoAgentEnvironment' has not been set"
 fi
 
-# if deployment mode is not empty or set to packaged
-if [[ "${deploymentMode}" != "packaged" ]] && [[ "${deploymentMode}" != "" ]]
-then
-  if [[ "${globalGitHubToken}" == "REQUIRED" ]] || [[ "${globalGitHubToken}" == "" ]]
-  then
-    if $validationSuccess
-    then
-      echo "Validating configuration failed:"
-      validationSuccess=false
-    fi
-    echo "  Variable 'globalGitHubToken' has not been set"
-  else
-    internalGlobalGitHubToken=-gitHubToken=${globalGitHubToken}
-    
-    if [ ! -z "${dumpDetails+x}" ]
-    then
-      echo "set 'internalGlobalGitHubToken' = '${internalGlobalGitHubToken}'" 
-    fi
-  fi
-
-  if [ ! -z "${solutionResourceGitHubToken+x}" ]
-  then
-    internalSolutionResourceGitHubToken=gitHubSolutionDownloadToken=${solutionResourceGitHubToken}
-    
-    if [ ! -z "${dumpDetails+x}" ]
-    then
-      echo "set 'internalSolutionResourceGitHubToken' = '${internalSolutionResourceGitHubToken}'" 
-    fi
-  fi
-fi
-
 if ! $validationSuccess
 then
   echo
@@ -755,13 +712,13 @@ then
   echo Command to be executed:
   echo "WARNING: Command dump includes sensitive values. Do not share this output."
   echo
-  echo java ${jvmSettings} -jar ${TOOLFILENAME} ${BOOTSTRAPDEBUGSTRINGINTERNAL} ${BOOTSTRAPURL} \"-scriptDownloadPath=${SCRIPTDOWNLOADPATH}\" \"-scriptName=${FILENAME}\" \"-scriptSource=${SCRIPTNAME}\" \"-scriptVersion=${SCRIPTVERSION}\" -ocLoginServer=${ocLoginServer} -ocLoginToken=${ocLoginToken} ${cp4baNamespaceInternal} ${TOOLPROXYSETTINGS} -installBasePath=${DEPLOYMENTPATTERN} -config=${CONFIGNAME} -automationScript=${AUTOMATIONSCRIPT} ${INTERNALDOCKERINFO} ${INTERNALWXOOPTIONS} ${additionalOptions} ${internalDisableDownloadCmd} ${internalGlobalGitHubToken} ${internalSolutionResourceGitHubToken}
+  echo java ${jvmSettings} -jar ${TOOLFILENAME} ${BOOTSTRAPDEBUGSTRINGINTERNAL} ${BOOTSTRAPURL} \"-scriptDownloadPath=${SCRIPTDOWNLOADPATH}\" \"-scriptName=${FILENAME}\" \"-scriptSource=${SCRIPTNAME}\" \"-scriptVersion=${SCRIPTVERSION}\" -ocLoginServer=${ocLoginServer} -ocLoginToken=${ocLoginToken} ${cp4baNamespaceInternal} ${TOOLPROXYSETTINGS} -installBasePath=${DEPLOYMENTPATTERN} -config=${CONFIGNAME} -automationScript=${AUTOMATIONSCRIPT} ${INTERNALDOCKERINFO} ${INTERNALWXOOPTIONS} ${additionalOptions} ${internalDisableDownloadCmd} 
   echo
 fi
 
 if [ -z "${dumpCmdOnly+x}" ]
 then
-  java ${jvmSettings} -jar ${TOOLFILENAME} ${BOOTSTRAPDEBUGSTRINGINTERNAL} ${BOOTSTRAPURL} \"-scriptDownloadPath=${SCRIPTDOWNLOADPATH}\" \"-scriptName=${FILENAME}\" \"-scriptSource=${SCRIPTNAME}\" \"-scriptVersion=${SCRIPTVERSION}\" -ocLoginServer=${ocLoginServer} -ocLoginToken=${ocLoginToken} ${cp4baNamespaceInternal} ${TOOLPROXYSETTINGS} -installBasePath=${DEPLOYMENTPATTERN} -config=${CONFIGNAME} -automationScript=${AUTOMATIONSCRIPT} ${INTERNALDOCKERINFO} ${INTERNALWXOOPTIONS} ${additionalOptions} ${internalDisableDownloadCmd} ${internalGlobalGitHubToken} ${internalSolutionResourceGitHubToken}
+  java ${jvmSettings} -jar ${TOOLFILENAME} ${BOOTSTRAPDEBUGSTRINGINTERNAL} ${BOOTSTRAPURL} \"-scriptDownloadPath=${SCRIPTDOWNLOADPATH}\" \"-scriptName=${FILENAME}\" \"-scriptSource=${SCRIPTNAME}\" \"-scriptVersion=${SCRIPTVERSION}\" -ocLoginServer=${ocLoginServer} -ocLoginToken=${ocLoginToken} ${cp4baNamespaceInternal} ${TOOLPROXYSETTINGS} -installBasePath=${DEPLOYMENTPATTERN} -config=${CONFIGNAME} -automationScript=${AUTOMATIONSCRIPT} ${INTERNALDOCKERINFO} ${INTERNALWXOOPTIONS} ${additionalOptions} ${internalDisableDownloadCmd}
 else
   echo
   echo Test mode, command execution skipped.
