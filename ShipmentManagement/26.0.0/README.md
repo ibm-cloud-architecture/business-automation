@@ -566,10 +566,6 @@ From the user perspective, the application reflects organization-specific brandi
   
 3. Click on **Edit Details** button and add the newest version of the monitoring sources , after running the application atleast twice .   
 
-### AI Agent setup
-
-1. Follow the instructions: https://ibm.ent.box.com/notes/2277399246904 
-
 ### Customize the application
 
 1. create folders : Shipment Ops > AppData > logo

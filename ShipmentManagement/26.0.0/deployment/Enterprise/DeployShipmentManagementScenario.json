@@ -1,7 +1,7 @@
 {
 	"comment": "Contains the steps required to deploy the Shipment Management scenario",
 	"fileVersion": "1.0.3",
-	"fileLocation": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/deployment/Enterprise/DeployShipmentManagementScenario.json",
+	"fileLocation": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/deployment/Enterprise/DeployShipmentManagementScenario.json",
 	"requiredToolVersion": ">=1.1.136 <1.2.0",
 	"requiredCP4BAVersion": ">=26.0.0 <26.1.0",
 	"requiredCP4BAPattern": "Enterprise",
@@ -51,7 +51,7 @@
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Decision/Approval%20Plan.zip"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Decision/Approval%20Plan.zip"
 												
 											}
 										]
@@ -206,11 +206,11 @@
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Decision/Carrier%20Delivery%20Risk%20Decision.zip"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Decision/Carrier%20Delivery%20Risk%20Decision.zip"
 											},
 											{
 												"name": "carrier_delivery_failure_scorecard.pmml",
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents",
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents",
 												"retrievalMode": "latest",
 												"matchStr": "carrier_delivery_failure_scorecard.*\\.pmml"
 											}
@@ -390,7 +390,7 @@
 										"files": [
 											{
 												"name": "Shipment_Management_System.twx",
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAW",
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAW",
 												"retrievalMode": "latest",
 												"matchStr": "Shipment_Management_System.*\\.twx"
 											}
@@ -554,16 +554,16 @@
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/PO_Receipt.pdf"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/PO_Receipt.pdf"
 											},
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/Shipping_Label.pdf"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/Shipping_Label.pdf"
 											},
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/proof_of_delivery.pdf"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/templates/proof_of_delivery.pdf"
 											},
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents/default.jpeg"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents/default.jpeg"
 											}
 										]
 									}
@@ -675,19 +675,19 @@
 										"files": [
 											{
 												"name": "Carrier_Application.twx",
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Carrier_Application.*\\.twx"
 											},
 											{
 												"name": "Shipment_Application.twx",
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Shipment_Application.*\\.twx"
 											},
 											{
 												"name": "Warehouse_Application.twx",
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Warehouse_Application.*\\.twx"
 											}
@@ -792,13 +792,13 @@
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/CarrierApplication.zip"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/CarrierApplication.zip"
 											},
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/ShipmentApplication.zip"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/ShipmentApplication.zip"
 											},
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/WarehouseApplication.zip"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA/WarehouseApplication.zip"
 											}
 										]
 									}
@@ -971,7 +971,7 @@
 										"replaceExistingFiles": true,
 										"files": [
 											{
-												"url": "https://github.com/ibm-cloud-architecture/irt-scenarios/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAI/Shipment%20Management.json"
+												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAI/Shipment%20Management.json"
 											}
 										]
 									}

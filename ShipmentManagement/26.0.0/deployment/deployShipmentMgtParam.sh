@@ -327,7 +327,7 @@ CP4BAVERSION="26.0.0"
 # Deployment pattern of the CP4BA instance
 DEPLOYMENTPATTERN="Enterprise"
 # Source URL to bootstrap configuration for the deployment tool
-BOOTSTRAPURL="-bootstrapURL=https://api.github.com/repos/ibm-cloud-architecture/irt-scenarios/contents/ShipmentManagement/${CP4BAVERSION}/deployment/${DEPLOYMENTPATTERN}"
+BOOTSTRAPURL="-bootstrapURL=https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/${CP4BAVERSION}/deployment/${DEPLOYMENTPATTERN}"
 # Name of the configuration file to use when running the deployment automation tool
 CONFIGNAME="config-deploy-gitea"
 # Automation script to use when running the deployment automation tool
@@ -340,7 +340,7 @@ FILENAME=$0
 # Version of this script file passed to execution environment
 SCRIPTVERSION=1.0.1
 # Download URL for this script
-SCRIPTDOWNLOADPATH=https://api.github.com/repos/ibm-cloud-architecture/irt-scenarios/contents/ShipmentManagement/${CP4BAVERSION}/deployment/${SCRIPTNAME%}
+SCRIPTDOWNLOADPATH=https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/${CP4BAVERSION}/deployment/${SCRIPTNAME%}
 # Variable values to be copied to newer version in case found
 COPYVARVALUES=ocLoginServer,ocLoginToken,cp4baNamespace,createUsers,useInternalMailServer,ocpStorageClassForInternalMailServer,gmailAddress,gmailAppKey,dockerUserName,dockerToken,jvmSettings,disableAccessToGitHub,proxyScenario,proxyHost,proxyPort,proxyUser,proxyPwd,proxyPwd,bootstrapDebugString,outputPath,printDetailedMessageToConsole,printTraceMessageToConsole,wxoUrl
 
