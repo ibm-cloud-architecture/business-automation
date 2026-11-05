@@ -1,8 +1,8 @@
 {
 	"comment": "Contains the steps required to deploy the Shipment Management scenario",
-	"fileVersion": "1.0.3",
+	"fileVersion": "1.0.4",
 	"fileLocation": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/deployment/Enterprise/DeployShipmentManagementScenario.json",
-	"requiredToolVersion": ">=1.1.136 <1.2.0",
+	"requiredToolVersion": ">=1.1.141 <1.2.0",
 	"requiredCP4BAVersion": ">=26.0.0 <26.1.0",
 	"requiredCP4BAPattern": "Enterprise",
 	"actions": [
@@ -210,7 +210,7 @@
 											},
 											{
 												"name": "carrier_delivery_failure_scorecard.pmml",
-												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/Documents",
+												"url": "https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/$$(cp4baVersion)$$/Documents?ref=main",
 												"retrievalMode": "latest",
 												"matchStr": "carrier_delivery_failure_scorecard.*\\.pmml"
 											}
@@ -390,7 +390,7 @@
 										"files": [
 											{
 												"name": "Shipment_Management_System.twx",
-												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAW",
+												"url": "https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/$$(cp4baVersion)$$/BAW",
 												"retrievalMode": "latest",
 												"matchStr": "Shipment_Management_System.*\\.twx"
 											}
@@ -675,19 +675,19 @@
 										"files": [
 											{
 												"name": "Carrier_Application.twx",
-												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
+												"url": "https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Carrier_Application.*\\.twx"
 											},
 											{
 												"name": "Shipment_Application.twx",
-												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
+												"url": "https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Shipment_Application.*\\.twx"
 											},
 											{
 												"name": "Warehouse_Application.twx",
-												"url": "https://github.com/ibm-cloud-architecture/business-automation/raw/main/ShipmentManagement/$$(cp4baVersion)$$/BAA",
+												"url": "https://api.github.com/repos/ibm-cloud-architecture/business-automation/contents/ShipmentManagement/$$(cp4baVersion)$$/BAA",
 												"retrievalMode": "latest",
 												"matchStr": "Warehouse_Application.*\\.twx"
 											}
