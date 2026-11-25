@@ -9,8 +9,10 @@ Together, these applications support order creation, inventory validation, short
 
 ### Demo Link
 
-- Interactive Demo - [Demo](https://demo-now.techzone.ibm.com/psl/01s087v)
-- ppt - [Shipment Management Intro](https://github.ibm.com/dba/IRT-Solution-Scenarios/blob/main/ShipmentManagement/Documents/Client_Intro_Shipment_Management.pptx)
+* **YouTube Demo:** [Demo](https://www.youtube.com/watch?v=nX3UKtNRIkw).
+* **End-to-End Interactive Walkthrough:** [Navattic Walkthrough](https://demo-now.techzone.ibm.com/psl/01s087v?g=cmshpob6k000000iqkg69lzvz&s=0).
+* **ppt:** [Shipment Management Intro](https://github.ibm.com/dba/IRT-Solution-Scenarios/blob/main/ShipmentManagement/Documents/Client_Intro_Shipment_Management.pptx).
+* **IBM Technology Zone environment:** [Getting Started Lab](https://techzone.ibm.com/collection/apollo-business-automation/journey-cp4ba-demos).
 
 ## 2. Solution Architecture Overview
 
@@ -24,22 +26,6 @@ The Warehouse Application is the middle operational stage. It is responsible for
 ### 2.3. Carrier Application
 
 The Carrier Application is the final execution stage. It is responsible for loading finalized shipment details, updating delivery execution status, and completing the shipment lifecycle.
-
-
-### 2.4. End-to-End Integrated Process Flow
-
-### Stage 1 – Shipment Application
-
-The user creates the shipment request, validates inventory, handles shortage/procurement if needed, and prepares shipment details.
-
-### Stage 2 – Warehouse Application
-
-The warehouse team loads the shipment request, confirms readiness, performs warehouse planning, uses AI-assisted tools, and prepares carrier handoff data.
-
-### Stage 3 – Carrier Application
-
-The carrier team loads the finalized order, updates delivery execution details, and completes the final delivery lifecycle.
-
 ---
 
 ## 3. CP4BA Components used
@@ -565,6 +551,10 @@ From the user perspective, the application reflects organization-specific brandi
 2. On the app tile for the solution , click and wait for the dashboard to open
   
 3. Click on **Edit Details** button and add the newest version of the monitoring sources , after running the application atleast twice .   
+
+### AI Agent setup
+
+1. Follow the instructions: https://ibm.ent.box.com/notes/2277399246904 
 
 ### Customize the application
 
